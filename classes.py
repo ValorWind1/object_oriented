@@ -23,24 +23,25 @@ class Planet:
 
 
 
-hoth = Planet("Hoth",400000,4,"Hoth System")
-print(hoth.name)
-print(f"Name is: {hoth.name}")
-print(f"Radius is:{hoth.radius}",f"Gravity is: {hoth.gravity}",f" System is : {hoth.system}")
-print("radius is : "+ str(hoth.radius)+" gravity is : "+ str(hoth.gravity)+" system is:" + hoth.system)
-print(hoth.orbit())
-naboo = Planet("Naboo",230000,8,"Naboo System")
-print(naboo.name +" has aradius of : " + str(naboo.radius) + " with current gravity of : " +str(naboo.gravity)+ " and is located in the : " + naboo.system)
+# hoth = Planet("Hoth",400000,4,"Hoth System")
+# print(hoth.name)
+# print(f"Name is: {hoth.name}")
+# print(f"Radius is:{hoth.radius}",f"Gravity is: {hoth.gravity}",f" System is : {hoth.system}")
+# print("radius is : "+ str(hoth.radius)+" gravity is : "+ str(hoth.gravity)+" system is:" + hoth.system)
+# print(hoth.orbit())
+# naboo = Planet("Naboo",230000,8,"Naboo System")
+# print(naboo.name +" has aradius of : " + str(naboo.radius) + " with current gravity of : " +str(naboo.gravity)+ " and is located in the : " + naboo.system)
+#
+# print("----------------")
+#
+# print(Planet.shape)
+# print(hoth.shape)  # example to show that instances, and objectes have access to class lvl attributes
+#
+# print("---------")
+#
+# print(Planet.commons())  # static method
+#
+# print ("-----")
+#
+# print(Planet.spin())   # static method
 
-print("----------------")
-
-print(Planet.shape)
-print(hoth.shape)  # example to show that instances, and objectes have access to class lvl attributes
-
-print("---------")
-
-print(Planet.commons())  # static method
-
-print ("-----")
-
-print(Planet.spin())   # static method
