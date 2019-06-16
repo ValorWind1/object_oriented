@@ -42,6 +42,38 @@ class Employee:
             return False
         return True
 
+class Developer(Employee):
+    raise_amount = 1.10
+
+    def __init__(self,first,last,pay,prog_lang):
+        super().__init__(first,last,pay)
+        self.prog_lang= prog_lang
+
+
+
+class Manager(Employee):
+
+    def __init__(self,first,last,pay,employees = None): # list of employees
+        super().__init__(first,last,pay)
+        if employees is None:
+            self.employees = []  # = to an empty list
+        else:
+            self.employees = employees
+
+
+
+    def add_employee_Manager(self, employeeManaged):
+        if employeeManaged not in self.employees:
+            self.employees.append(employeeManaged)
+
+    def remove_employee_Manager(self,employeeRemove):
+        if employeeRemove in self.employees:
+            self.employees.append(employeeRemove)
+
+    def print_current_employees(self):
+        for i in self.employees:
+            print("--->", i.fullname())
+
 
 
 employe1 = Employee("Corey","armstrong",50000)
@@ -58,7 +90,7 @@ print("--------------")
 Employee.set_raise_amount(1.05)
 print("salary")
 print(employe1.pay)
-print(employe1.raise_amount)
+print(employe1.apply_raised())
 print(employe1.pay)
 
 print("---------------")
@@ -84,3 +116,27 @@ print("----------------")
 #
 my_date = datetime.date(2019,6,15)
 print(Employee.is_workday(my_date))
+
+# ************************************************************
+
+print("----------------------------")
+print("--------Developers------------")
+
+dev1 = Developer("lams", "wind",9000, "Python")
+dev2 = Developer("adams","wood",8000, "Java")
+
+print(dev1.fullName()+" languague : "+dev1.prog_lang)
+print(dev2.fullName()+" languague : "+dev2.prog_lang)
+
+# ************************************************************
+
+print ("----------------------------")
+print("------Managers---------------")
+
+mgr1 = Manager("Sue","Smith",10000,[dev1])
+print(mgr1.email)
+
+mgr1.add_employee_Manager(dev1)
+
+mgr1.print_current_employees()
+print(mgr1)
