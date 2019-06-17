@@ -42,6 +42,20 @@ class Employee:
             return False
         return True
 
+        # unanvigous representation of the object (debbuging)
+    def __repr__(self):
+        return "Employee('{}','{}',{})".format(self.first, self.last, self.pay)
+
+        # readable representation of an object (display to end user)
+    def __str__(self):
+        return '{}-{}'.format(self.fullName(), self.email)
+
+    def __add__(self, other):
+        return self.pay + other.pay
+
+    def __len__(self):
+        return len(self.fullName())
+
 class Developer(Employee):
     raise_amount = 1.10
 
@@ -72,13 +86,23 @@ class Manager(Employee):
 
     def print_current_employees(self):
         for i in self.employees:
-            print("--->", i.fullname())
+            print("--->", i.fullName())
 
+    # unanvigous representation of the object (debbuging)
+    def __repr__(self):
+         return "Employee('{}','{}',{})".format(self.first, self.last, self.pay)
 
+    # readable representation of an object (display to end user)
+    def __str__(self):
+        return '{}-{}'.format(self.fullName(),self.email)
 
-employe1 = Employee("Corey","armstrong",50000)
-employe2 = Employee("teryy","roger",60000)
-
+employe1 = Employee('Corey','armstrong',50000)
+employe2 = Employee('teryy','roger',60000)
+#using __add__( ) method
+print(employe1+employe2)
+# using __len__ method
+print(len(employe1))
+print("-------------")
 print(employe1)
 print(employe2)
 print(employe1.email)
@@ -140,3 +164,15 @@ mgr1.add_employee_Manager(dev1)
 
 mgr1.print_current_employees()
 print(mgr1)
+
+
+print("============")
+# will tells us if an objected is an instance of a class
+print(isinstance(mgr1,Manager))
+
+# if an object is a instance of a subclass
+
+print(issubclass(Developer,Employee))
+
+
+
